@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'book', to: 'book#list'
+  get 'book' , to: 'book#show'
+  get 'book/new'
+  post 'book', to: 'book#create'
+  put 'book', to: 'book#update'
+  get 'book/edit'
+  delete 'book', to: 'book#delete'
+  get 'book/subjects', to: 'book#show_subjects'
 end
