@@ -5,7 +5,9 @@
 
   <ul id="books">
     <% @books.each do |b| %>
-      <li><%= link_to b.title, {:action => 'show', :id => b.id } %></li>
+      <li><%= link_to b.title, {:action => 'show', :id => b.id } %> <b>
+      <%= link_to 'Edit', {:action => 'edit', :id => b.id } %> </li> <b>
+      <%= link_to 'Delete', {:action => 'delete', :id => b.id }, :confirm => "Are you sure you want to delete this book?" %>
     <% end %>
   </ul>
 <% end %>

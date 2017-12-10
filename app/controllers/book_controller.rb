@@ -16,11 +16,8 @@ class BookController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      puts "SExxx"
       redirect_to :action => 'list'
     else
-      puts "&'asra'"
-      # Not sure if needed! because we are calling the new method!
       @subjects = Subject.all
       render :action => 'new'
     end
