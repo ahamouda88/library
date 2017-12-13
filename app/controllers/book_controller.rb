@@ -1,6 +1,6 @@
 class BookController < ApplicationController
   layout 'standard'
-  
+
   def list
     @books = Book.all
     @subjects = Subject.all
@@ -52,6 +52,7 @@ class BookController < ApplicationController
 
   def delete
     Book.find(params[:id]).destroy
+    @subjects = Subject.all
     render :action => 'list'
   end
 

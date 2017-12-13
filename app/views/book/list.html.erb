@@ -14,7 +14,7 @@
     <% @books.each do |b| %>
       <li><%= link_to b.title, :action => 'show', :id => b.id %> <b>
       <%= link_to 'Edit', :action => 'edit', :id => b.id  %> <b>
-      <%= link_to 'Delete', :action => 'delete', :id => b.id, :data => {:confirm => "Are you sure you want to delete this book?"}, :method => :delete %> </li> 
+      <%= link_to 'Delete', {:action => 'delete', :id => b.id}, {:method => :delete, :data => "Are you sure you want to delete?"} %>
     <% end %>
   </ul>
 <% end %>
