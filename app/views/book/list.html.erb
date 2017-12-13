@@ -1,6 +1,6 @@
 <% @subjects.each do |s| %>
-  <ul>
-    <li><%= link_to s.name, {:action => 'show_subjects', :id => s.id } %></li>
+  <ul id="subjects">
+    <li><%= link_to s.name, :action => 'show_subjects', :id => s.id %></li>
   </ul>
 <% end %>
 
@@ -12,10 +12,10 @@
 
   <ul id="books">
     <% @books.each do |b| %>
-      <li><%= link_to b.title, {:action => 'show', :id => b.id } %> <b>
-      <%= link_to 'Edit', {:action => 'edit', :id => b.id } %> </li> <b>
-      <%= link_to 'Delete', {:action => 'delete', :id => b.id }, :data => "Are you sure you want to delete this book?", :method => :delete %>
+      <li><%= link_to b.title, :action => 'show', :id => b.id %> <b>
+      <%= link_to 'Edit', :action => 'edit', :id => b.id  %> <b>
+      <%= link_to 'Delete', :action => 'delete', :id => b.id, :data => {:confirm => "Are you sure you want to delete this book?"}, :method => :delete %> </li> 
     <% end %>
   </ul>
 <% end %>
-<p><%= link_to "Add new Book", {:action => 'new' } %></p>
+<p><%= link_to "Add new Book", :action => 'new' %></p>
