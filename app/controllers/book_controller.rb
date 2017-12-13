@@ -1,6 +1,7 @@
 class BookController < ApplicationController
   def list
     @books = Book.all
+    @subjects = Subject.all
   end
 
   def show

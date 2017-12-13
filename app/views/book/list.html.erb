@@ -1,3 +1,8 @@
+<% @subjects.each do |s| %>
+  <%= link_to s.name, {:action => 'show_subjects', :id => s.id } %><br>
+<% end %>
+
+
 <% if @books.blank? %>
   <p>There are not any books currently in the system!</p>
 <% else %>
